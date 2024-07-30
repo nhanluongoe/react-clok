@@ -1,19 +1,5 @@
-import { useEffect, useState } from "react";
 import styled from "@emotion/styled";
-
-type HMS = {
-  hour: number;
-  minute: number;
-  second: number;
-};
-
-const FULL_CIRCLE = 360;
-const FULL_HOUR = 12;
-const FULL_MINUTE = 60;
-const FULL_SECOND = 60;
-const DEGREE_PER_SECOND = FULL_CIRCLE / FULL_SECOND;
-const DEGREE_PER_MINUTE = FULL_CIRCLE / FULL_MINUTE;
-const DEGREE_PER_HOUR = FULL_CIRCLE / FULL_HOUR;
+import useTime from "../core/use-time";
 
 const ClockWrapper = styled.div``;
 
@@ -72,26 +58,7 @@ const ClockSecondHand = styled(ClockHand)<ClockSecondHandProps>`
 `;
 
 export default function Clock() {
-  const [time, setTime] = useState<HMS>({ hour: 0, minute: 0, second: 0 });
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTime({
-        hour: new Date().getHours(),
-        minute: new Date().getMinutes(),
-        second: new Date().getSeconds(),
-      });
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const secondDeg = time.second * DEGREE_PER_SECOND;
-  const minuteDeg =
-    time.minute * DEGREE_PER_MINUTE +
-    (time.second / FULL_SECOND) * DEGREE_PER_MINUTE;
-  const hourDeg =
-    time.hour * DEGREE_PER_HOUR + (time.minute / FULL_MINUTE) * DEGREE_PER_HOUR;
-
+  const { hourDeg, minuteDeg, secondDeg } = useTime();
   return (
     <ClockWrapper>
       <ClockFrame>
