@@ -1,5 +1,5 @@
 {
-  "name": "react-clok",
+  "name": "root-react-clok-monorepo",
   "private": true,
   "scripts": {
     "build": "turbo build",
