@@ -8,7 +8,7 @@ interface ClockHourHandProps {
 const StyledClockHourHand = styled(ClockHand)<ClockHourHandProps>`
   transform: ${(props) => {
     console.log(props, "hehe");
-    return `rotate(${props.hourDeg - 90}deg)`;
+    return `rotate(${props.hourDeg - 90}deg) translateY(-50%)`;
   }};
   background-color: red;
   height: 10px;

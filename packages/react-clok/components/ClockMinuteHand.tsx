@@ -7,7 +7,7 @@ interface ClockMinuteHandProps {
 
 const StyledClockMinuteHand = styled(ClockHand)<ClockMinuteHandProps>`
   transform: ${(props) => {
-    return `rotate(${props.minuteDeg - 90}deg)`;
+    return `rotate(${props.minuteDeg - 90}deg) translateY(-50%)`;
   }};
   background-color: blue;
   height: 10px;

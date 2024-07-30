@@ -7,7 +7,7 @@ interface ClockSecondHandProps {
 
 const StyledClockSecondHand = styled(ClockHand)<ClockSecondHandProps>`
   transform: ${(props) => {
-    return `rotate(${props.secondDeg - 90}deg)`;
+    return `rotate(${props.secondDeg - 90}deg) translateY(-50%)`;
   }};
   background-color: green;
   height: 10px;
