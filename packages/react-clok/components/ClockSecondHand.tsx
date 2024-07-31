@@ -11,7 +11,7 @@ const StyledClockSecondHand = styled(ClockHand)<ClockSecondHandProps>`
   }};
   background-color: green;
   height: 10px;
-  width: 25%;
+  width: 45%;
 `;
 
 export default function ClockSecondHand(props: ClockSecondHandProps) {

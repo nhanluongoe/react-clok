@@ -3,6 +3,7 @@ import useTime from "../core/use-time";
 import ClockHourHand from "./ClockHourHand";
 import ClockMinuteHand from "./ClockMinuteHand";
 import ClockSecondHand from "./ClockSecondHand";
+import ClockHourMark from "./ClockHourMark";
 
 const ClockWrapper = styled.div``;
 
@@ -22,6 +23,7 @@ export default function Clock() {
         <ClockHourHand hourDeg={hourDeg} />
         <ClockMinuteHand minuteDeg={minuteDeg} />
         <ClockSecondHand secondDeg={secondDeg} />
+        <ClockHourMark />
       </ClockFrame>
     </ClockWrapper>
   );

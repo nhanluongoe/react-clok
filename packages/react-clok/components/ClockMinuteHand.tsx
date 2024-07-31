@@ -11,7 +11,7 @@ const StyledClockMinuteHand = styled(ClockHand)<ClockMinuteHandProps>`
   }};
   background-color: blue;
   height: 10px;
-  width: 25%;
+  width: 35%;
 `;
 
 export default function ClockMinuteHand(props: ClockMinuteHandProps) {
