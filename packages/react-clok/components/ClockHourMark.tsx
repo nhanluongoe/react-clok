@@ -3,12 +3,13 @@ import { DEGREE_PER_HOUR } from "../core/constants";
 
 const StyledClockHourMark = styled.div<{ deg: number }>`
   position: absolute;
-  background: pink;
+  background: black;
   width: 5px;
   height: 5%;
   top: 50%;
   left: 50%;
   transform-origin: 0 0;
+  border-radius: 16px;
   transform: ${(props) => `rotate(${props.deg - 90}deg) translate(-50%, 850%)`};
 `;
 

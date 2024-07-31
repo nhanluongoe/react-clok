@@ -1,19 +1,19 @@
 import styled from "@emotion/styled";
-import ClockHand from "./ClockHand";
+import ClockHand, { ClockHandProps } from "./ClockHand";
 
-interface ClockSecondHandProps {
-  secondDeg: number;
-}
+const DEFAULT_CONFIG = {
+  color: "black",
+  width: "4px",
+  length: "42%",
+};
 
-const StyledClockSecondHand = styled(ClockHand)<ClockSecondHandProps>`
-  transform: ${(props) => {
-    return `rotate(${props.secondDeg - 90}deg) translateY(-50%)`;
-  }};
-  background-color: green;
-  height: 10px;
-  width: 45%;
+const StyledClockSecondHand = styled(ClockHand)<ClockHandProps>`
+  transform: ${({ deg }) => `rotate(${deg - 90}deg) translateY(-50%)`};
+  background-color: ${({ color = DEFAULT_CONFIG.color }) => color};
+  height: ${({ width = DEFAULT_CONFIG.width }) => width};
+  width: ${({ length = DEFAULT_CONFIG.length }) => length};
 `;
 
-export default function ClockSecondHand(props: ClockSecondHandProps) {
+export default function ClockSecondHand(props: ClockHandProps) {
   return <StyledClockSecondHand {...props} />;
 }
