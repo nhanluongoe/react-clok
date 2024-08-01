@@ -20,17 +20,19 @@ interface ClockProps {
 const ClockWrapper = styled.div``;
 
 export default function Clock(props: ClockProps) {
-  const { hourDeg, minuteDeg, secondDeg } = useTime();
+  const { hourDeg, minuteDeg, secondDeg, iso } = useTime();
   const { frame, hourHand, minuteHand, secondHand, center, mark } = props;
   return (
     <ClockWrapper>
-      <ClockFrame {...frame}>
-        <ClockHourHand deg={hourDeg} {...hourHand} />
-        <ClockMinuteHand deg={minuteDeg} {...minuteHand} />
-        <ClockSecondHand deg={secondDeg} {...secondHand} />
-        <ClockMark {...mark} />
-        <ClockCenter {...center} />
-      </ClockFrame>
+      <time dateTime={iso}>
+        <ClockFrame {...frame}>
+          <ClockHourHand deg={hourDeg} {...hourHand} />
+          <ClockMinuteHand deg={minuteDeg} {...minuteHand} />
+          <ClockSecondHand deg={secondDeg} {...secondHand} />
+          <ClockMark {...mark} />
+          <ClockCenter {...center} />
+        </ClockFrame>
+      </time>
     </ClockWrapper>
   );
 }

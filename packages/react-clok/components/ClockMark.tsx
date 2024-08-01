@@ -97,7 +97,6 @@ export default function ClockMark(props: ClockMarkProps) {
     secondaryMark = DEFAULT_CONFIG.secondaryMark,
   } = props;
 
-  console.log("props: ", props);
   return (
     <>
       {MARKS.map((_, index) => {

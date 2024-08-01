@@ -11,10 +11,16 @@ type HMS = {
   hour: number;
   minute: number;
   second: number;
+  iso: string;
 };
 
 export default function useTime() {
-  const [time, setTime] = useState<HMS>({ hour: 0, minute: 0, second: 0 });
+  const [time, setTime] = useState<HMS>({
+    hour: 0,
+    minute: 0,
+    second: 0,
+    iso: "",
+  });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,6 +28,7 @@ export default function useTime() {
         hour: new Date().getHours(),
         minute: new Date().getMinutes(),
         second: new Date().getSeconds(),
+        iso: new Date().toISOString(),
       });
     }, 1000);
     return () => clearInterval(interval);
@@ -34,5 +41,5 @@ export default function useTime() {
   const hourDeg =
     time.hour * DEGREE_PER_HOUR + (time.minute / FULL_MINUTE) * DEGREE_PER_HOUR;
 
-  return { time, secondDeg, minuteDeg, hourDeg };
+  return { secondDeg, minuteDeg, hourDeg, iso: time.iso };
 }
