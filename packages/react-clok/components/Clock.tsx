@@ -3,27 +3,33 @@ import useTime from "../core/use-time";
 import ClockHourHand from "./ClockHourHand";
 import ClockMinuteHand from "./ClockMinuteHand";
 import ClockSecondHand from "./ClockSecondHand";
-import ClockHourMark from "./ClockHourMark";
+import ClockMark, { ClockMarkProps } from "./ClockMark";
+import { ClockHandProps } from "./ClockHand";
+import ClockFrame, { ClockFrameProps } from "./ClockFrame";
+import ClockCenter, { ClockCenterProps } from "./ClockCenter";
+
+interface ClockProps {
+  frame?: ClockFrameProps;
+  hourHand?: Exclude<ClockHandProps, "deg">;
+  minuteHand?: Exclude<ClockHandProps, "deg">;
+  secondHand?: Exclude<ClockHandProps, "deg">;
+  center?: ClockCenterProps;
+  mark?: ClockMarkProps;
+}
 
 const ClockWrapper = styled.div``;
 
-const ClockFrame = styled.div`
-  border-radius: 9999px;
-  border: 1px solid #000;
-  width: 800px;
-  height: 800px;
-  position: relative;
-`;
-
-export default function Clock() {
+export default function Clock(props: ClockProps) {
   const { hourDeg, minuteDeg, secondDeg } = useTime();
+  const { frame, hourHand, minuteHand, secondHand, center, mark } = props;
   return (
     <ClockWrapper>
-      <ClockFrame>
-        <ClockHourHand hourDeg={hourDeg} />
-        <ClockMinuteHand minuteDeg={minuteDeg} />
-        <ClockSecondHand secondDeg={secondDeg} />
-        <ClockHourMark />
+      <ClockFrame {...frame}>
+        <ClockHourHand deg={hourDeg} {...hourHand} />
+        <ClockMinuteHand deg={minuteDeg} {...minuteHand} />
+        <ClockSecondHand deg={secondDeg} {...secondHand} />
+        <ClockMark {...mark} />
+        <ClockCenter {...center} />
       </ClockFrame>
     </ClockWrapper>
   );
