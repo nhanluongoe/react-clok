@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "An minimal and customizable analog and digital clock for React app.",
   "source": "./src/index.ts",
-  "type": "module",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
