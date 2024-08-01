@@ -17,9 +17,6 @@ export default defineConfig([
         js: '"use client";',
       };
     },
-    loader: {
-      ".css": "local-css",
-    },
     entry: ["./src/index.ts"],
     outDir: "dist",
   },
