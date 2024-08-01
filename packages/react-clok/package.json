@@ -1,7 +1,9 @@
 {
-  "name": "@repo/react-clok",
+  "name": "react-clok",
   "version": "1.0.0",
-  "description": "",
+  "description": "An minimal and customizable analog and digital clock for React app.",
+  "source": "./src/index.ts",
+  "type": "module",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
@@ -14,11 +16,31 @@
     "build": "tsup",
     "dev": "pnpm run build --watch"
   },
-  "keywords": [],
-  "author": "Nhan Luong",
-  "license": "ISC",
+  "keywords": [
+    "clock",
+    "digital clock",
+    "analog clock",
+    "react",
+    "react-component",
+    "time"
+  ],
+  "author": {
+    "name": "Nhan Luong",
+    "email": "nhanlt18@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhanluongoe/react-clok.git",
+    "directory": "packages/react-clok"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "license": "MIT",
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
+    "@repo/eslint-config": "workspace:*",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "react": "^18.3.1",
@@ -26,8 +48,9 @@
     "tsup": "^8.2.3"
   },
   "peerDependencies": {
-    "react": ">=18.2.0",
-    "react-dom": ">=18.2.0"
+    "@types/react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
   },
   "dependencies": {
     "@emotion/react": "^11.13.0",
