@@ -1,2 +1,1 @@
-import Clock from "./components/Clock";
-export default Clock;
+export { default as AnalogClock } from "./components/analog-clock/Clock";

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import { DEGREE_PER_HOUR, DEGREE_PER_SECOND } from "../core/constants";
+import { DEGREE_PER_HOUR, DEGREE_PER_SECOND } from "../../core/constants";
 import { CSSProperties, Fragment } from "react";
-import { convertToRadians } from "../core/utils";
+import { convertToRadians } from "../../core/utils";
 
 interface BaseMarkProps {
   show?: boolean;

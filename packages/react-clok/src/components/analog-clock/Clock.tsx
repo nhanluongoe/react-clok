@@ -1,4 +1,4 @@
-import useTime from "../core/use-time";
+import useTime from "../../core/use-time";
 import ClockCenter, { ClockCenterProps } from "./ClockCenter";
 import ClockFrame, { ClockFrameProps } from "./ClockFrame";
 import { ClockHandProps } from "./ClockHand";
