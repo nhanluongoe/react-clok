@@ -20,7 +20,7 @@ export default defineConfig([
     loader: {
       ".css": "local-css",
     },
-    entry: ["./index.ts"],
+    entry: ["./src/index.ts"],
     outDir: "dist",
   },
 ]);
