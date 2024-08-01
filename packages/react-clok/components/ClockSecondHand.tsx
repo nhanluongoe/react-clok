@@ -2,9 +2,9 @@ import styled from "@emotion/styled";
 import ClockHand, { ClockHandProps } from "./ClockHand";
 
 const DEFAULT_CONFIG = {
-  color: "black",
+  color: "darkred",
   width: "4px",
-  length: "42%",
+  length: "43%",
 };
 
 const StyledClockSecondHand = styled(ClockHand)<ClockHandProps>`

@@ -3,8 +3,8 @@ import ClockHand, { ClockHandProps } from "./ClockHand";
 
 const DEFAULT_CONFIG = {
   color: "black",
-  width: "10px",
-  length: "25%",
+  width: "12px",
+  length: "30%",
 };
 
 const StyledClockHourHand = styled(ClockHand)<ClockHandProps>`
