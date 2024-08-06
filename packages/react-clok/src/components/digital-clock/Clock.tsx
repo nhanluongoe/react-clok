@@ -1,16 +1,19 @@
 import useTime from "../../core/use-time";
 import Digit, { ClockDigitProps } from "./ClockDigit";
-import Separator from "./ClockSeparator";
+import Separator, { ClockSeparatorProps } from "./ClockSeparator";
 import ClockFrame from "./ClockFrame";
+import { HTMLAttributes } from "react";
 
 interface DigitalClockProps {
+  frame?: Exclude<HTMLAttributes<HTMLDivElement>, "display" | "align-items">;
   hourSegment?: Exclude<ClockDigitProps, "number" | "show">;
   minuteSegment?: Exclude<ClockDigitProps, "number" | "show">;
   secondSegment?: Exclude<ClockDigitProps, "number">;
+  separator: ClockSeparatorProps;
 }
 
 export default function DigitalClock(props: DigitalClockProps) {
-  const { hourSegment, minuteSegment, secondSegment } = props;
+  const { hourSegment, minuteSegment, secondSegment, separator, frame } = props;
 
   const { hour, minute, second, iso } = useTime();
 
@@ -19,7 +22,7 @@ export default function DigitalClock(props: DigitalClockProps) {
 
     return (
       <>
-        <Separator />
+        <Separator {...separator} />
 
         <Digit number={Math.floor(second / 10)} {...secondSegment} />
         <Digit number={second % 10} {...secondSegment} />
@@ -29,11 +32,11 @@ export default function DigitalClock(props: DigitalClockProps) {
 
   return (
     <time dateTime={iso}>
-      <ClockFrame>
+      <ClockFrame {...frame}>
         <Digit number={Math.floor(hour / 10)} {...hourSegment} />
         <Digit number={hour % 10} {...hourSegment} />
 
-        <Separator />
+        <Separator {...separator} />
 
         <Digit number={Math.floor(minute / 10)} {...minuteSegment} />
         <Digit number={minute % 10} {...minuteSegment} />

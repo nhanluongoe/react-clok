@@ -7,6 +7,12 @@ const DEFAULT_CONFIG = {
   color: "black",
 };
 
+export interface ClockSeparatorProps {
+  size?: number;
+  gap?: number;
+  color?: CSSProperties["color"];
+}
+
 const StyledClockSeparator = styled.div<ClockSeparatorProps>`
   display: flex;
   gap: ${({ gap = DEFAULT_CONFIG.gap }) => gap}px;
@@ -20,12 +26,6 @@ const ClockSeparatorDot = styled.div<ClockSeparatorProps>`
   border-radius: 50%;
   background-color: ${({ color = DEFAULT_CONFIG.color }) => color};
 `;
-
-interface ClockSeparatorProps {
-  size?: number;
-  gap?: number;
-  color?: CSSProperties["color"];
-}
 
 export default function ClockSeparator(props: ClockSeparatorProps) {
   return (
