@@ -2,7 +2,6 @@ import useTime from "../../core/use-time";
 import Digit, { ClockDigitProps } from "./ClockDigit";
 import Separator from "./ClockSeparator";
 import ClockFrame from "./ClockFrame";
-import { CSSProperties } from "react";
 
 interface DigitalClockProps {
   hourSegment?: Exclude<ClockDigitProps, "number" | "show">;
