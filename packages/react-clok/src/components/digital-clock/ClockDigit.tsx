@@ -16,7 +16,6 @@ const DigitBase = styled.div<ClockDigitProps>`
   height: ${({ size = DEFAULT_CONFIG.size }) => size}px;
   margin: 0 ${({ gap = DEFAULT_CONFIG.gap }) => gap}px;
   border-width: ${({ width = DEFAULT_CONFIG.width }) => width}px;
-  color: ${({ color = DEFAULT_CONFIG.color }) => color};
 `;
 
 const DigitTop = styled(DigitBase)<ClockDigitProps>`
@@ -47,165 +46,171 @@ export default function ClockDigit(props: ClockDigitProps) {
   );
 }
 
-function topFragmentStyle(props: { number: number }) {
-  const { number } = props;
+function topFragmentStyle(props: {
+  number: number;
+  color?: CSSProperties["color"];
+}) {
+  const { number, color = DEFAULT_CONFIG.color } = props;
   if (number === 0) {
     return css`
-      border-top-color: black;
-      border-right-color: black;
-      border-left-color: black;
+      border-top-color: ${color};
+      border-right-color: ${color};
+      border-left-color: ${color};
     `;
   }
 
   if (number === 1) {
     return css`
-      border-right-color: black;
+      border-right-color: ${color};
     `;
   }
 
   if (number === 2) {
     return css`
-      border-top-color: black;
-      border-right-color: black;
-      border-bottom-color: black;
+      border-top-color: ${color};
+      border-right-color: ${color};
+      border-bottom-color: ${color};
     `;
   }
 
   if (number === 3) {
     return css`
-      border-top-color: black;
-      border-right-color: black;
-      border-bottom-color: black;
+      border-top-color: ${color};
+      border-right-color: ${color};
+      border-bottom-color: ${color};
     `;
   }
 
   if (number === 4) {
     return css`
-      border-right-color: black;
-      border-left-color: black;
-      border-bottom-color: black;
+      border-right-color: ${color};
+      border-left-color: ${color};
+      border-bottom-color: ${color};
     `;
   }
 
   if (number === 5) {
     return css`
-      border-top-color: black;
-      border-left-color: black;
-      border-bottom-color: black;
+      border-top-color: ${color};
+      border-left-color: ${color};
+      border-bottom-color: ${color};
     `;
   }
 
   if (number === 6) {
     return css`
-      border-top-color: black;
-      border-left-color: black;
-      border-bottom-color: black;
+      border-top-color: ${color};
+      border-left-color: ${color};
+      border-bottom-color: ${color};
     `;
   }
 
   if (number === 7) {
     return css`
-      border-top-color: black;
-      border-right-color: black;
+      border-top-color: ${color};
+      border-right-color: ${color};
     `;
   }
 
   if (number === 8) {
     return css`
-      border-top-color: black;
-      border-right-color: black;
-      border-left-color: black;
-      border-bottom-color: black;
+      border-top-color: ${color};
+      border-right-color: ${color};
+      border-left-color: ${color};
+      border-bottom-color: ${color};
     `;
   }
 
   if (number === 9) {
     return css`
-      border-top-color: black;
-      border-right-color: black;
-      border-left-color: black;
-      border-bottom-color: black;
+      border-top-color: ${color};
+      border-right-color: ${color};
+      border-left-color: ${color};
+      border-bottom-color: ${color};
     `;
   }
 }
 
-function bottomFragmentStyle(props: { number: number }) {
-  const { number } = props;
+function bottomFragmentStyle(props: {
+  number: number;
+  color?: CSSProperties["color"];
+}) {
+  const { number, color = DEFAULT_CONFIG.color } = props;
 
   if (number === 0) {
     return css`
-      border-right-color: black;
-      border-left-color: black;
-      border-bottom-color: black;
+      border-right-color: ${color};
+      border-left-color: ${color};
+      border-bottom-color: ${color};
     `;
   }
 
   if (number === 1) {
     return css`
-      border-right-color: black;
+      border-right-color: ${color};
     `;
   }
 
   if (number === 2) {
     return css`
-      border-top-color: black;
-      border-bottom-color: black;
-      border-left-color: black;
+      border-top-color: ${color};
+      border-bottom-color: ${color};
+      border-left-color: ${color};
     `;
   }
 
   if (number === 3) {
     return css`
-      border-right-color: black;
-      border-top-color: black;
-      border-bottom-color: black;
+      border-right-color: ${color};
+      border-top-color: ${color};
+      border-bottom-color: ${color};
     `;
   }
 
   if (number === 4) {
     return css`
-      border-right-color: black;
-      border-top-color: black;
+      border-right-color: ${color};
+      border-top-color: ${color};
     `;
   }
 
   if (number === 5) {
     return css`
-      border-top-color: black;
-      border-right-color: black;
-      border-bottom-color: black;
+      border-top-color: ${color};
+      border-right-color: ${color};
+      border-bottom-color: ${color};
     `;
   }
 
   if (number === 6) {
     return css`
-      border-top-color: black;
-      border-left-color: black;
-      border-bottom-color: black;
-      border-right-color: black;
+      border-top-color: ${color};
+      border-left-color: ${color};
+      border-bottom-color: ${color};
+      border-right-color: ${color};
     `;
   }
 
   if (number === 7) {
     return css`
-      border-right-color: black;
+      border-right-color: ${color};
     `;
   }
 
   if (number === 8) {
     return css`
-      border-top-color: black;
-      border-right-color: black;
-      border-left-color: black;
-      border-bottom-color: black;
+      border-top-color: ${color};
+      border-right-color: ${color};
+      border-left-color: ${color};
+      border-bottom-color: ${color};
     `;
   }
 
   if (number === 9) {
     return css`
-      border-right-color: black;
-      border-top-color: black;
-      border-bottom-color: black;
+      border-right-color: ${color};
+      border-top-color: ${color};
+      border-bottom-color: ${color};
     `;
   }
 }
