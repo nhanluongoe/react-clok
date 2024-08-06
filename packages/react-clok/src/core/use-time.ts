@@ -31,8 +31,11 @@ export default function useTime() {
         iso: new Date().toISOString(),
       });
     }, 1000);
+
     return () => clearInterval(interval);
   }, []);
+
+  const { hour, minute, second } = time;
 
   const secondDeg = time.second * DEGREE_PER_SECOND;
   const minuteDeg =
@@ -41,5 +44,5 @@ export default function useTime() {
   const hourDeg =
     time.hour * DEGREE_PER_HOUR + (time.minute / FULL_MINUTE) * DEGREE_PER_HOUR;
 
-  return { secondDeg, minuteDeg, hourDeg, iso: time.iso };
+  return { hour, minute, second, secondDeg, minuteDeg, hourDeg, iso: time.iso };
 }
