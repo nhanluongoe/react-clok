@@ -9,9 +9,9 @@ import ClockSecondHand from "./ClockSecondHand";
 
 interface ClockProps {
   frame?: ClockFrameProps;
-  hourHand?: Exclude<ClockHandProps, "deg">;
-  minuteHand?: Exclude<ClockHandProps, "deg">;
-  secondHand?: Exclude<ClockHandProps, "deg">;
+  hourHand?: Omit<ClockHandProps, "deg">;
+  minuteHand?: Omit<ClockHandProps, "deg">;
+  secondHand?: Omit<ClockHandProps, "deg">;
   center?: ClockCenterProps;
   mark?: ClockMarkProps;
 }

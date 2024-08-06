@@ -5,11 +5,11 @@ import ClockFrame from "./ClockFrame";
 import { HTMLAttributes } from "react";
 
 interface DigitalClockProps {
-  frame?: Exclude<HTMLAttributes<HTMLDivElement>, "display" | "align-items">;
-  hourSegment?: Exclude<ClockDigitProps, "number" | "show">;
-  minuteSegment?: Exclude<ClockDigitProps, "number" | "show">;
-  secondSegment?: Exclude<ClockDigitProps, "number">;
-  separator: ClockSeparatorProps;
+  frame?: Omit<HTMLAttributes<HTMLDivElement>, "display" | "align-items">;
+  hourSegment?: Omit<ClockDigitProps, "number" | "show">;
+  minuteSegment?: Omit<ClockDigitProps, "number" | "show">;
+  secondSegment?: Omit<ClockDigitProps, "number">;
+  separator?: ClockSeparatorProps;
 }
 
 export default function DigitalClock(props: DigitalClockProps) {
