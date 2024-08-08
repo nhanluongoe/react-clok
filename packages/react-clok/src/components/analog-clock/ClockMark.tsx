@@ -22,6 +22,7 @@ export interface ClockMarkProps {
   number?: NumberProps;
   primaryMark?: BaseMarkProps;
   secondaryMark?: BaseMarkProps;
+  locale?: string;
 }
 
 const DEFAULT_CONFIG = {
@@ -31,6 +32,7 @@ const DEFAULT_CONFIG = {
     fontSize: "2.5rem",
     fontFamily: "Roboto",
     fontWeight: "bold",
+    locale: "en-US",
   },
   primaryMark: {
     showNumber: true,
@@ -95,6 +97,7 @@ export default function ClockMark(props: ClockMarkProps) {
     number = DEFAULT_CONFIG.number,
     primaryMark = DEFAULT_CONFIG.primaryMark,
     secondaryMark = DEFAULT_CONFIG.secondaryMark,
+    locale = DEFAULT_CONFIG.number.locale,
   } = props;
 
   return (
@@ -106,7 +109,7 @@ export default function ClockMark(props: ClockMarkProps) {
             <Fragment key={index}>
               {number.show && (
                 <StyledNumber {...number} deg={index * DEGREE_PER_SECOND}>
-                  {index / 5 === 0 ? 12 : index / 5}
+                  {(index / 5 === 0 ? 12 : index / 5).toLocaleString(locale)}
                 </StyledNumber>
               )}
               <StyledClockPrimaryMark
