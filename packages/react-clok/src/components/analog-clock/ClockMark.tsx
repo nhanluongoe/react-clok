@@ -61,7 +61,7 @@ const StyledClockPrimaryMark = styled(StyledClockMark)<
   background: ${({ color = DEFAULT_CONFIG.primaryMark.color }) => color};
   width: ${({ width = DEFAULT_CONFIG.primaryMark.width }) => width};
   transform: ${(props) => `rotate(${props.deg - 90}deg) translate(-50%, 690%)`};
-  height: "6%";
+  height: 6%;
 `;
 
 const StyledClockSecondaryMark = styled(StyledClockMark)<
