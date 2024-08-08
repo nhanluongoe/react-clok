@@ -5,7 +5,6 @@ import { convertToRadians } from "../../core/utils";
 
 interface BaseMarkProps {
   show?: boolean;
-  length?: CSSProperties["height"];
   width?: CSSProperties["width"];
   color?: CSSProperties["color"];
 }
@@ -37,14 +36,12 @@ const DEFAULT_CONFIG = {
   primaryMark: {
     showNumber: true,
     show: true,
-    length: "6%",
     width: "12px",
     color: "black",
   },
   secondaryMark: {
     showNumber: false,
     show: true,
-    length: "3%",
     width: "4px",
     color: "black",
   },
@@ -63,8 +60,8 @@ const StyledClockPrimaryMark = styled(StyledClockMark)<
 >`
   background: ${({ color = DEFAULT_CONFIG.primaryMark.color }) => color};
   width: ${({ width = DEFAULT_CONFIG.primaryMark.width }) => width};
-  height: ${({ length = DEFAULT_CONFIG.primaryMark.length }) => length};
   transform: ${(props) => `rotate(${props.deg - 90}deg) translate(-50%, 690%)`};
+  height: "6%";
 `;
 
 const StyledClockSecondaryMark = styled(StyledClockMark)<
@@ -72,9 +69,9 @@ const StyledClockSecondaryMark = styled(StyledClockMark)<
 >`
   background: ${({ color = DEFAULT_CONFIG.secondaryMark.color }) => color};
   width: ${({ width = DEFAULT_CONFIG.secondaryMark.width }) => width};
-  height: ${({ length = DEFAULT_CONFIG.secondaryMark.length }) => length};
   transform: ${(props) =>
     `rotate(${props.deg - 90}deg) translate(-50%, 1470%)`};
+  height: 3%;
 `;
 
 const StyledNumber = styled.span<ClockMarkProps["number"] & { deg: number }>`
