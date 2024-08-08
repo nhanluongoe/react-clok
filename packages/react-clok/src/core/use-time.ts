@@ -24,11 +24,12 @@ export default function useTime() {
 
   useEffect(() => {
     const interval = setInterval(() => {
+      const now = new Date();
       setTime({
-        hour: new Date().getHours(),
-        minute: new Date().getMinutes(),
-        second: new Date().getSeconds(),
-        iso: new Date().toISOString(),
+        hour: now.getHours(),
+        minute: now.getMinutes(),
+        second: now.getSeconds(),
+        iso: now.toISOString(),
       });
     }, 1000);
 
