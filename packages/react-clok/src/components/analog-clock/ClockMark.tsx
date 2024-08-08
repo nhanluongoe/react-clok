@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { DEGREE_PER_HOUR, DEGREE_PER_SECOND } from "../../core/constants";
+import { DEGREE_PER_SECOND } from "../../core/constants";
 import { CSSProperties, Fragment } from "react";
 import { convertToRadians } from "../../core/utils";
 
@@ -90,7 +90,7 @@ const StyledNumber = styled.span<ClockMarkProps["number"] & { deg: number }>`
   color: ${({ color = DEFAULT_CONFIG.number.color }) => color};
 `;
 
-const MARKS = Array.from({ length: 60 }).fill("mark");
+const MARKS = Array.from({ length: 60 }, (_, index) => index);
 
 export default function ClockMark(props: ClockMarkProps) {
   const {
@@ -100,38 +100,34 @@ export default function ClockMark(props: ClockMarkProps) {
     locale = DEFAULT_CONFIG.number.locale,
   } = props;
 
-  return (
-    <>
-      {MARKS.map((_, index) => {
-        const isPrimary = index % 5 === 0;
-        if (isPrimary) {
-          return (
-            <Fragment key={index}>
-              {number.show && (
-                <StyledNumber {...number} deg={index * DEGREE_PER_SECOND}>
-                  {(index / 5 === 0 ? 12 : index / 5).toLocaleString(locale)}
-                </StyledNumber>
-              )}
-              <StyledClockPrimaryMark
-                deg={index * DEGREE_PER_SECOND}
-                {...primaryMark}
-              />
-            </Fragment>
-          );
-        }
+  return MARKS.map((val) => {
+    const isPrimary = val % 5 === 0;
+    if (isPrimary) {
+      return (
+        <Fragment key={val}>
+          {number.show && (
+            <StyledNumber {...number} deg={val * DEGREE_PER_SECOND}>
+              {(val / 5 === 0 ? 12 : val / 5).toLocaleString(locale)}
+            </StyledNumber>
+          )}
+          <StyledClockPrimaryMark
+            deg={val * DEGREE_PER_SECOND}
+            {...primaryMark}
+          />
+        </Fragment>
+      );
+    }
 
-        if (secondaryMark.show) {
-          return (
-            <StyledClockSecondaryMark
-              key={index}
-              deg={index * DEGREE_PER_SECOND}
-              {...secondaryMark}
-            />
-          );
-        }
+    if (secondaryMark.show) {
+      return (
+        <StyledClockSecondaryMark
+          key={val}
+          deg={val * DEGREE_PER_SECOND}
+          {...secondaryMark}
+        />
+      );
+    }
 
-        return null;
-      })}
-    </>
-  );
+    return null;
+  });
 }
