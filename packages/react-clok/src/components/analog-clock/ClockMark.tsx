@@ -76,15 +76,16 @@ const StyledClockSecondaryMark = styled(StyledClockMark)<
 
 const StyledNumber = styled.span<ClockMarkProps["number"] & { deg: number }>`
   position: absolute;
+  left: ${({ deg }) =>
+    `${50 + 37 * Math.cos(convertToRadians(90 - deg))}%`}; // Not sure why using Math.sin causes hydration error
   top: ${({ deg }) => `${50 - 37 * Math.cos(convertToRadians(deg))}%`};
-  left: ${({ deg }) => `${50 + 37 * Math.sin(convertToRadians(deg))}%`};
-  transform: translate(-50%, -50%);
   font-size: ${({ fontSize = DEFAULT_CONFIG.number.fontSize }) => fontSize};
   font-weight: ${({ fontWeight = DEFAULT_CONFIG.number.fontWeight }) =>
     fontWeight};
   font-family: ${({ fontFamily = DEFAULT_CONFIG.number.fontFamily }) =>
     fontFamily};
   color: ${({ color = DEFAULT_CONFIG.number.color }) => color};
+  transform: translate(-50%, -50%);
 `;
 
 const MARKS = Array.from({ length: 60 }, (_, index) => index);
