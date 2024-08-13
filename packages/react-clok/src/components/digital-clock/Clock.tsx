@@ -8,7 +8,7 @@ interface DigitalClockProps {
   frame?: Omit<HTMLAttributes<HTMLDivElement>, "display" | "align-items">;
   hourSegment?: Omit<ClockDigitProps, "number" | "show">;
   minuteSegment?: Omit<ClockDigitProps, "number" | "show">;
-  secondSegment?: Omit<ClockDigitProps, "number">;
+  secondSegment?: Omit<ClockDigitProps, "number"> & { show: boolean };
   separator?: ClockSeparatorProps;
 }
 
@@ -24,8 +24,16 @@ export default function DigitalClock(props: DigitalClockProps) {
       <>
         <Separator {...separator} />
 
-        <Digit number={Math.floor(second / 10)} {...secondSegment} />
-        <Digit number={second % 10} {...secondSegment} />
+        <Digit
+          className="clock__second-digit"
+          number={Math.floor(second / 10)}
+          {...secondSegment}
+        />
+        <Digit
+          className="clock__second-digit"
+          number={second % 10}
+          {...secondSegment}
+        />
       </>
     );
   }
@@ -33,13 +41,29 @@ export default function DigitalClock(props: DigitalClockProps) {
   return (
     <time dateTime={iso}>
       <ClockFrame {...frame}>
-        <Digit number={Math.floor(hour / 10)} {...hourSegment} />
-        <Digit number={hour % 10} {...hourSegment} />
+        <Digit
+          className="clock__hour-digit"
+          number={Math.floor(hour / 10)}
+          {...hourSegment}
+        />
+        <Digit
+          className="clock__hour-digit"
+          number={hour % 10}
+          {...hourSegment}
+        />
 
         <Separator {...separator} />
 
-        <Digit number={Math.floor(minute / 10)} {...minuteSegment} />
-        <Digit number={minute % 10} {...minuteSegment} />
+        <Digit
+          className="clock__minute-digit"
+          number={Math.floor(minute / 10)}
+          {...minuteSegment}
+        />
+        <Digit
+          className="clock__minute-digit"
+          number={minute % 10}
+          {...minuteSegment}
+        />
 
         {renderSecondSegment()}
       </ClockFrame>

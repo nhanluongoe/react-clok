@@ -28,10 +28,19 @@ const ClockSeparatorDot = styled.div<ClockSeparatorProps>`
 `;
 
 export default function ClockSeparator(props: ClockSeparatorProps) {
+  const { size, gap, color } = props;
   return (
-    <StyledClockSeparator>
-      <ClockSeparatorDot />
-      <ClockSeparatorDot />
+    <StyledClockSeparator gap={gap}>
+      <ClockSeparatorDot
+        className="clock__separator-dot"
+        size={size}
+        color={color}
+      />
+      <ClockSeparatorDot
+        className="clock__separator-dot"
+        size={size}
+        color={color}
+      />
     </StyledClockSeparator>
   );
 }

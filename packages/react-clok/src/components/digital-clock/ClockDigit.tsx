@@ -7,7 +7,6 @@ const DEFAULT_CONFIG = {
   color: "black",
   size: 100,
   gap: 16,
-  show: true,
 };
 
 const DigitBase = styled.div<ClockDigitProps>`
@@ -32,16 +31,16 @@ export interface ClockDigitProps {
   number: number;
   width?: number;
   color?: CSSProperties["color"];
-  show?: boolean;
   size?: number;
   gap?: number;
+  className?: string;
 }
 
 export default function ClockDigit(props: ClockDigitProps) {
   return (
-    <div>
-      <DigitTop {...props}></DigitTop>
-      <DigitBottom {...props}></DigitBottom>
+    <div className={props.className ?? ""}>
+      <DigitTop className="clock__digit-top" {...props}></DigitTop>
+      <DigitBottom className="clock__digit-bottom" {...props}></DigitBottom>
     </div>
   );
 }
