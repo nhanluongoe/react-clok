@@ -34,13 +34,11 @@ const DEFAULT_CONFIG = {
     locale: "en-US",
   },
   primaryMark: {
-    showNumber: true,
     show: true,
     width: "12px",
     color: "black",
   },
   secondaryMark: {
-    showNumber: false,
     show: true,
     width: "4px",
     color: "black",
@@ -103,15 +101,18 @@ export default function ClockMark(props: ClockMarkProps) {
     if (isPrimary) {
       return (
         <Fragment key={val}>
-          {number.show && (
+          {(number.show ?? DEFAULT_CONFIG.number.show) && (
             <StyledNumber {...number} deg={val * DEGREE_PER_SECOND}>
               {(val / 5 === 0 ? 12 : val / 5).toLocaleString(locale)}
             </StyledNumber>
           )}
-          <StyledClockPrimaryMark
-            deg={val * DEGREE_PER_SECOND}
-            {...primaryMark}
-          />
+          {(primaryMark.show ?? DEFAULT_CONFIG.primaryMark.show) && (
+            <StyledClockPrimaryMark
+              deg={val * DEGREE_PER_SECOND}
+              className="clock-primary-mark"
+              {...primaryMark}
+            />
+          )}
         </Fragment>
       );
     }
@@ -121,6 +122,7 @@ export default function ClockMark(props: ClockMarkProps) {
         <StyledClockSecondaryMark
           key={val}
           deg={val * DEGREE_PER_SECOND}
+          className="clock-secondary-mark"
           {...secondaryMark}
         />
       );
