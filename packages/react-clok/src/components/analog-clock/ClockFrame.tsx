@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { CSSProperties, ReactNode } from "react";
 
 export interface ClockFrameProps {
-  children: ReactNode;
+  children?: ReactNode;
   color?: CSSProperties["color"];
   frameWidth?: CSSProperties["borderWidth"];
   size?: CSSProperties["width"];
