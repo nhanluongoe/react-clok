@@ -32,12 +32,12 @@ export default function ClockSeparator(props: ClockSeparatorProps) {
   return (
     <StyledClockSeparator gap={gap}>
       <ClockSeparatorDot
-        className="clock__separator-dot"
+        data-testid="clock-separator-dot"
         size={size}
         color={color}
       />
       <ClockSeparatorDot
-        className="clock__separator-dot"
+        data-testid="clock-separator-dot"
         size={size}
         color={color}
       />

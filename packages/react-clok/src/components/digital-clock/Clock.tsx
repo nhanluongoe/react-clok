@@ -25,12 +25,12 @@ export default function DigitalClock(props: DigitalClockProps) {
         <Separator {...separator} />
 
         <Digit
-          className="clock__second-digit"
+          data-testid="clock-second-digit"
           number={Math.floor(second / 10)}
           {...secondSegment}
         />
         <Digit
-          className="clock__second-digit"
+          data-testid="clock-second-digit"
           number={second % 10}
           {...secondSegment}
         />
@@ -42,12 +42,12 @@ export default function DigitalClock(props: DigitalClockProps) {
     <time dateTime={iso}>
       <ClockFrame {...frame}>
         <Digit
-          className="clock__hour-digit"
+          data-testid="clock-hour-digit"
           number={Math.floor(hour / 10)}
           {...hourSegment}
         />
         <Digit
-          className="clock__hour-digit"
+          data-testid="clock-hour-digit"
           number={hour % 10}
           {...hourSegment}
         />
@@ -55,12 +55,12 @@ export default function DigitalClock(props: DigitalClockProps) {
         <Separator {...separator} />
 
         <Digit
-          className="clock__minute-digit"
+          data-testid="clock-minute-digit"
           number={Math.floor(minute / 10)}
           {...minuteSegment}
         />
         <Digit
-          className="clock__minute-digit"
+          data-testid="clock-minute-digit"
           number={minute % 10}
           {...minuteSegment}
         />

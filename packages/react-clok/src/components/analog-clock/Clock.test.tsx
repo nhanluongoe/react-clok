@@ -1,11 +1,11 @@
-import { act, render } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import Clock from "./Clock";
 
 describe("clock", () => {
   it("should render properly", () => {
-    const { container } = render(<Clock />);
-    const time = container.querySelector("time");
+    render(<Clock />);
+    const time = screen.getByRole("time");
     expect(time).toBeInTheDocument();
   });
 
@@ -14,7 +14,7 @@ describe("clock", () => {
       render(<Clock />);
     });
 
-    const time = document.querySelector("time");
+    const time = screen.getByRole("time");
 
     expect(time?.getAttribute("datetime")).toBe("");
 

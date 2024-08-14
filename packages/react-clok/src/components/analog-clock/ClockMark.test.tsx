@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import ClockMark from "./ClockMark";
 
@@ -44,57 +44,57 @@ describe("clock mark", () => {
   });
 
   it("should have primary mark shown by default", () => {
-    const { container } = render(<ClockMark />);
-    const mark = container.querySelector("div.clock-primary-mark");
+    render(<ClockMark />);
+    const marks = screen.queryAllByTestId("clock-primary-mark");
 
-    expect(mark).toBeInTheDocument();
+    expect(marks).toHaveLength(12);
   });
 
   it("should have primary mark hidden by passing", () => {
-    const { container } = render(<ClockMark primaryMark={{ show: false }} />);
-    const mark = container.querySelector("div.clock-primary-mark");
+    render(<ClockMark primaryMark={{ show: false }} />);
+    const marks = screen.queryAllByTestId("clock-primary-mark");
 
-    expect(mark).not.toBeInTheDocument();
+    expect(marks).toHaveLength(0);
   });
 
   it("should show primary mark with black color by default", () => {
-    const { container } = render(<ClockMark />);
-    const mark = container.querySelector("div.clock-primary-mark");
+    render(<ClockMark />);
+    const marks = screen.queryAllByTestId("clock-primary-mark");
 
-    expect(mark).toHaveStyle("background-color: rgb(0, 0, 0)");
+    expect(marks[0]).toHaveStyle("background-color: rgb(0, 0, 0)");
   });
 
   it("should show primary mark with red color by passing", () => {
-    const { container } = render(
+    render(
       <ClockMark
         primaryMark={{
           color: "red",
         }}
       />
     );
-    const mark = container.querySelector("div.clock-primary-mark");
+    const marks = screen.queryAllByTestId("clock-primary-mark");
 
-    expect(mark).toHaveStyle("background-color: rgb(255, 0, 0)");
+    expect(marks[0]).toHaveStyle("background-color: rgb(255, 0, 0)");
   });
 
   it("should have primary mark with 12px width by default", () => {
-    const { container } = render(<ClockMark />);
-    const mark = container.querySelector("div.clock-primary-mark");
+    render(<ClockMark />);
+    const marks = screen.queryAllByTestId("clock-primary-mark");
 
-    expect(mark).toHaveStyle("width: 12px");
+    expect(marks[0]).toHaveStyle("width: 12px");
   });
 
   it("should have primary mark with 8px width by passing", () => {
-    const { container } = render(
+    render(
       <ClockMark
         primaryMark={{
           width: "8px",
         }}
       />
     );
-    const mark = container.querySelector("div.clock-primary-mark");
+    const marks = screen.queryAllByTestId("clock-primary-mark");
 
-    expect(mark).toHaveStyle("width: 8px");
+    expect(marks[0]).toHaveStyle("width: 8px");
   });
 
   // Since the secondary mark is similar to the primary mark, we can skip the tests for the secondary mark.

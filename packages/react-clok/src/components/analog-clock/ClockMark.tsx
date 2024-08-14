@@ -109,7 +109,7 @@ export default function ClockMark(props: ClockMarkProps) {
           {(primaryMark.show ?? DEFAULT_CONFIG.primaryMark.show) && (
             <StyledClockPrimaryMark
               deg={val * DEGREE_PER_SECOND}
-              className="clock-primary-mark"
+              data-testid="clock-primary-mark"
               {...primaryMark}
             />
           )}
@@ -122,7 +122,7 @@ export default function ClockMark(props: ClockMarkProps) {
         <StyledClockSecondaryMark
           key={val}
           deg={val * DEGREE_PER_SECOND}
-          className="clock-secondary-mark"
+          data-testid="clock-secondary-mark"
           {...secondaryMark}
         />
       );

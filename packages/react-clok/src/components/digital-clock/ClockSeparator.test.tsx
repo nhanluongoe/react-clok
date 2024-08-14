@@ -1,35 +1,42 @@
 import { describe, expect, it } from "vitest";
 import ClockSeparator from "./ClockSeparator";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
-describe("digital clock separator", () => {
+describe("digital clock separators", () => {
+  it("should render properly", () => {
+    render(<ClockSeparator />);
+    const separators = screen.queryAllByTestId("clock-separator-dot");
+
+    expect(separators).toHaveLength(2);
+  });
+
   it("should have color black by default", () => {
-    const { container } = render(<ClockSeparator />);
-    const separator = container.querySelector(".clock__separator-dot");
+    render(<ClockSeparator />);
+    const separators = screen.queryAllByTestId("clock-separator-dot");
 
-    expect(separator).toHaveStyle("background-color: rgb(0, 0, 0)");
+    expect(separators[0]).toHaveStyle("background-color: rgb(0, 0, 0)");
   });
 
   it("should have color red by passing", () => {
-    const { container } = render(<ClockSeparator color="red" />);
-    const separator = container.querySelector(".clock__separator-dot");
+    render(<ClockSeparator color="red" />);
+    const separators = screen.queryAllByTestId("clock-separator-dot");
 
-    expect(separator).toHaveStyle("background-color: rgb(255, 0, 0)");
+    expect(separators[0]).toHaveStyle("background-color: rgb(255, 0, 0)");
   });
 
   it("should have a size of 12px by default", () => {
-    const { container } = render(<ClockSeparator />);
-    const separator = container.querySelector(".clock__separator-dot");
+    render(<ClockSeparator />);
+    const separators = screen.queryAllByTestId("clock-separator-dot");
 
-    expect(separator).toHaveStyle("width: 12px");
-    expect(separator).toHaveStyle("height: 12px");
+    expect(separators[0]).toHaveStyle("width: 12px");
+    expect(separators[0]).toHaveStyle("height: 12px");
   });
 
   it("should have a size of 10px by passing", () => {
-    const { container } = render(<ClockSeparator size={10} />);
-    const separator = container.querySelector(".clock__separator-dot");
+    render(<ClockSeparator size={10} />);
+    const separators = screen.queryAllByTestId("clock-separator-dot");
 
-    expect(separator).toHaveStyle("width: 10px");
-    expect(separator).toHaveStyle("height: 10px");
+    expect(separators[0]).toHaveStyle("width: 10px");
+    expect(separators[0]).toHaveStyle("height: 10px");
   });
 });
