@@ -28,7 +28,7 @@ describe("Clock frame", () => {
 
   it("should have a specific box shadow by passing that value", () => {
     const { container } = render(
-      <ClockFrame boxShadow="5 5 10px rgba(0, 0, 0, 0.5)" />,
+      <ClockFrame boxShadow="5 5 10px rgba(0, 0, 0, 0.5)" />
     );
     const frame = container.firstChild;
 
@@ -43,7 +43,7 @@ describe("Clock frame", () => {
   });
 
   it("should have a 8px of frame width by passing", () => {
-    const { container } = render(<ClockFrame frameWidth="8px" />);
+    const { container } = render(<ClockFrame width="8px" />);
     const frame = container.firstChild;
 
     expect(frame).toHaveStyle("border-width: 8px");
