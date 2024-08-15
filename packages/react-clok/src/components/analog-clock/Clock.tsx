@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import useTime from "../../core/use-time";
 import ClockCenter, { ClockCenterProps } from "./ClockCenter";
 import ClockFrame, { ClockFrameProps } from "./ClockFrame";
@@ -17,12 +18,19 @@ interface ClockProps {
   mark?: ClockMarkProps & { locale?: string };
 }
 
+const Time = styled.time`
+  display: block;
+  position: relative;
+  width: fit-content;
+  height: 100%;
+`;
+
 export default function Clock(props: ClockProps) {
   const { hourDeg, minuteDeg, secondDeg, iso } = useTime();
   const { frame, hourHand, minuteHand, secondHand, center, mark, locale } =
     props;
   return (
-    <time dateTime={iso}>
+    <Time dateTime={iso}>
       <ClockFrame {...frame}>
         <ClockHourHand deg={hourDeg} {...hourHand} />
         <ClockMinuteHand deg={minuteDeg} {...minuteHand} />
@@ -30,6 +38,6 @@ export default function Clock(props: ClockProps) {
         <ClockMark {...mark} locale={locale} />
         <ClockCenter {...center} />
       </ClockFrame>
-    </time>
+    </Time>
   );
 }
