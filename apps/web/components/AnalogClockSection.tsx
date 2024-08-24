@@ -1,12 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
 import SliderInput from "@/components/ui/SliderInput";
-import { AnalogClock, DigitalClock } from "react-clok";
-import ColorInput from "./ui/ColorInput";
-import AnalogClockFrameSettings from "./AnalogClockFrameSettings";
-import CheckBoxInput from "./ui/CheckBoxInput";
+import { AnalogClock } from "react-clok";
 import { useForm, useWatch } from "react-hook-form";
+import CheckBoxInput from "./ui/CheckBoxInput";
+import ColorInput from "./ui/ColorInput";
 
 export default function AnalogClockSection() {
   const { register, getValues, control } = useForm({
@@ -64,8 +62,6 @@ export default function AnalogClockSection() {
     markNumberColor,
     markNumberShow,
   } = getValues();
-
-  console.log(centerPartSize);
 
   useWatch({
     control,
