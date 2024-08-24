@@ -50,38 +50,39 @@ export default function DigitalClockSection() {
   useWatch({ control });
 
   return (
-    <div>
-      <DigitalClock
-        hourSegment={{
-          size: hourSegmentSize,
-          color: hourSegmentColor,
-          width: hourSegmentWidth,
-          gap: hourSegmentGap,
-        }}
-        minuteSegment={{
-          size: minuteSegmentSize,
-          color: minuteSegmentColor,
-          width: minuteSegmentWidth,
-          gap: minuteSegmentGap,
-        }}
-        secondSegment={{
-          show: secondSegmentShow,
-          size: secondSegmentSize,
-          color: secondSegmentColor,
-          width: secondSegmentWidth,
-          gap: secondSegmentGap,
-        }}
-        separator={{
-          size: separatorSize,
-          color: separatorColor,
-          gap: separatorGap,
-        }}
-      />
-
+    <div className="my-6">
+      <h2 className="text-center">Digital Clock</h2>
       {/* Hour segment settings */}
-      <div className="flex">
-        <div className="min-w-[350px]"></div>
-        <div className="flex flex-wrap flex-grow gap-6">
+      <div className="flex flex-col">
+        <div className="mx-auto my-6">
+          <DigitalClock
+            hourSegment={{
+              size: hourSegmentSize,
+              color: hourSegmentColor,
+              width: hourSegmentWidth,
+              gap: hourSegmentGap,
+            }}
+            minuteSegment={{
+              size: minuteSegmentSize,
+              color: minuteSegmentColor,
+              width: minuteSegmentWidth,
+              gap: minuteSegmentGap,
+            }}
+            secondSegment={{
+              show: secondSegmentShow,
+              size: secondSegmentSize,
+              color: secondSegmentColor,
+              width: secondSegmentWidth,
+              gap: secondSegmentGap,
+            }}
+            separator={{
+              size: separatorSize,
+              color: separatorColor,
+              gap: separatorGap,
+            }}
+          />
+        </div>
+        <div className="flex flex-wrap flex-grow gap-6 justify-center">
           <div>
             <h5>Hour segment: </h5>
             <SliderInput
@@ -152,8 +153,8 @@ export default function DigitalClockSection() {
           <div>
             <h5>Separator: </h5>
             <SliderInput
-              min={200}
-              max={500}
+              min={5}
+              max={15}
               label="Size: "
               {...register("separatorSize")}
             />

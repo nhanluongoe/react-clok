@@ -24,13 +24,13 @@ export default function AnalogClockSection() {
       secondHandColor: "darkred",
       centerPartColor: "#000000",
       centerPartSize: 5,
-      primaryMarkWidth: 12,
+      primaryMarkWidth: 6,
       primaryMarkColor: "#000000",
       primaryMarkShow: true,
-      secondaryMarkWidth: 4,
+      secondaryMarkWidth: 3,
       secondaryMarkColor: "#000000",
       secondaryMarkShow: true,
-      markNumberSize: "2.5",
+      markNumberSize: "1.75rem",
       markNumberColor: "#000000",
       markNumberShow: true,
     },
@@ -68,58 +68,57 @@ export default function AnalogClockSection() {
   });
 
   return (
-    <div className="relative">
-      <div className="absolute">
-        <AnalogClock
-          frame={{
-            size: `${frameSize}px`,
-            color: frameColor,
-            width: `${frameWidth}px`,
-            boxShadow: frameShadow ? "0 0 10px rgba(0, 0, 0, 0.5)" : "none",
-          }}
-          hourHand={{
-            length: `${hourHandLength}%`,
-            width: `${hourHandWidth}px`,
-            color: hourHandColor,
-          }}
-          minuteHand={{
-            length: `${minuteHandLength}%`,
-            width: `${minuteHandWidth}px`,
-            color: minuteHandColor,
-          }}
-          secondHand={{
-            length: `${secondHandLength}%`,
-            width: `${secondHandWidth}px`,
-            color: secondHandColor,
-          }}
-          center={{
-            color: centerPartColor,
-            size: `${centerPartSize}%`,
-          }}
-          mark={{
-            primaryMark: {
-              width: `${primaryMarkWidth}px`,
-              color: primaryMarkColor,
-              show: primaryMarkShow,
-            },
-            secondaryMark: {
-              width: `${secondaryMarkWidth}px`,
-              color: secondaryMarkColor,
-              show: secondaryMarkShow,
-            },
-            number: {
-              fontSize: `${markNumberSize}rem`,
-              color: markNumberColor,
-              show: markNumberShow,
-            },
-          }}
-        />
-      </div>
-
+    <div className="my-6">
+      <h2 className="text-center">Analog Clock</h2>
       {/* Frame settings */}
-      <div className="flex">
-        <div className="min-w-[350px]"></div>
-        <div className="flex flex-wrap flex-grow gap-6">
+      <div className="flex flex-col">
+        <div className="mx-auto my-6">
+          <AnalogClock
+            frame={{
+              size: `${frameSize}px`,
+              color: frameColor,
+              width: `${frameWidth}px`,
+              boxShadow: frameShadow ? "0 0 10px rgba(0, 0, 0, 0.5)" : "none",
+            }}
+            hourHand={{
+              length: `${hourHandLength}%`,
+              width: `${hourHandWidth}px`,
+              color: hourHandColor,
+            }}
+            minuteHand={{
+              length: `${minuteHandLength}%`,
+              width: `${minuteHandWidth}px`,
+              color: minuteHandColor,
+            }}
+            secondHand={{
+              length: `${secondHandLength}%`,
+              width: `${secondHandWidth}px`,
+              color: secondHandColor,
+            }}
+            center={{
+              color: centerPartColor,
+              size: `${centerPartSize}%`,
+            }}
+            mark={{
+              primaryMark: {
+                width: `${primaryMarkWidth}px`,
+                color: primaryMarkColor,
+                show: primaryMarkShow,
+              },
+              secondaryMark: {
+                width: `${secondaryMarkWidth}px`,
+                color: secondaryMarkColor,
+                show: secondaryMarkShow,
+              },
+              number: {
+                fontSize: markNumberSize,
+                color: markNumberColor,
+                show: markNumberShow,
+              },
+            }}
+          />
+        </div>
+        <div className="flex flex-wrap flex-grow gap-6 justify-center">
           <div>
             <h5>Frame: </h5>
             <SliderInput
@@ -142,8 +141,8 @@ export default function AnalogClockSection() {
           <div>
             <h5>Hour Hand: </h5>
             <SliderInput
-              min={5}
-              max={30}
+              min={10}
+              max={50}
               label="Length: "
               {...register("hourHandLength")}
             />
@@ -160,8 +159,8 @@ export default function AnalogClockSection() {
           <div>
             <h5>Minute Hand: </h5>
             <SliderInput
-              min={5}
-              max={30}
+              min={10}
+              max={50}
               label="Length: "
               {...register("minuteHandLength")}
             />
@@ -178,8 +177,8 @@ export default function AnalogClockSection() {
           <div>
             <h5>Second Hand: </h5>
             <SliderInput
-              min={5}
-              max={30}
+              min={10}
+              max={50}
               label="Length: "
               {...register("secondHandLength")}
             />
@@ -233,13 +232,15 @@ export default function AnalogClockSection() {
           {/* Mark number settings */}
           <div>
             <h5>Mark Number: </h5>
-            <SliderInput
-              min={1}
-              max={10}
-              label="size: "
-              {...register("markNumberSize")}
-            />
-            <ColorInput label="color: " {...register("markNumberColor")} />
+            <div>
+              <label>Size: </label>
+              <input
+                type="text"
+                {...register("markNumberSize")}
+                className="border rounded-xl px-2"
+              />
+            </div>
+            <ColorInput label="Color: " {...register("markNumberColor")} />
             <CheckBoxInput label="Show: " {...register("markNumberShow")} />
           </div>
         </div>
