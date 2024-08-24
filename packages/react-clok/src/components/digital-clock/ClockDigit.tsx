@@ -38,7 +38,7 @@ export interface ClockDigitProps {
 
 export default function ClockDigit(props: ClockDigitProps) {
   return (
-    <div className={props.className ?? ""}>
+    <div>
       <DigitTop data-testid="clock-digit-top" {...props}></DigitTop>
       <DigitBottom data-testid="clock-digit-bottom" {...props}></DigitBottom>
     </div>
