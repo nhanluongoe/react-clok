@@ -1,9 +1,14 @@
+import Link from "next/link";
 import React from "react";
+import { AiFillGithub } from "react-icons/ai";
 
 export default function Header() {
   return (
-    <div>
-      <h1 className="text-center my-8">React Clok</h1>
-    </div>
+    <header className="flex justify-between container mx-auto">
+      <h3 className="text-center my-8 font-bold">React Clok</h3>
+      <Link href="https://github.com/nhanluongoe/react-clok">
+        <AiFillGithub className="text-4xl text-center my-8" />
+      </Link>
+    </header>
   );
 }

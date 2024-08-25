@@ -3,12 +3,12 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className="text-center">
+    <footer className="text-center my-8">
       Built by{" "}
       <Link className="text-link" href="https://nhanluong.dev">
         Nhan Luong
       </Link>{" "}
       with 🍠
-    </div>
+    </footer>
   );
 }
