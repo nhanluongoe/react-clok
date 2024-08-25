@@ -26,9 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-[#F1FAFF]">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} flex flex-col min-h-screen`}
+      >
         <Header />
-        {children}
+        <main className="flex-grow">{children}</main>
         <Footer />
       </body>
     </html>
