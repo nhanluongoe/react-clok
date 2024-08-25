@@ -99,8 +99,8 @@ export default function DigitalClockSection() {
               {...register("hourSegmentWidth")}
             />
             <SliderInput
-              min={0}
-              max={10}
+              min={1}
+              max={20}
               label="Gap: "
               {...register("hourSegmentGap")}
             />
@@ -121,8 +121,8 @@ export default function DigitalClockSection() {
               {...register("minuteSegmentWidth")}
             />
             <SliderInput
-              min={0}
-              max={10}
+              min={1}
+              max={20}
               label="Gap: "
               {...register("minuteSegmentGap")}
             />
@@ -143,8 +143,8 @@ export default function DigitalClockSection() {
               {...register("secondSegmentWidth")}
             />
             <SliderInput
-              min={0}
-              max={10}
+              min={1}
+              max={20}
               label="Gap: "
               {...register("secondSegmentGap")}
             />
@@ -160,8 +160,8 @@ export default function DigitalClockSection() {
             />
             <ColorInput label="Color: " {...register("separatorColor")} />
             <SliderInput
-              min={0}
-              max={10}
+              min={1}
+              max={20}
               label="Gap: "
               {...register("separatorGap")}
             />

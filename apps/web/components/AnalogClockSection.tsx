@@ -183,8 +183,8 @@ export default function AnalogClockSection() {
               {...register("secondHandLength")}
             />
             <SliderInput
-              min={5}
-              max={30}
+              min={1}
+              max={10}
               label="Width: "
               {...register("secondHandWidth")}
             />
