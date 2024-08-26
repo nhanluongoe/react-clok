@@ -10,20 +10,20 @@ export default function DigitalClockSection() {
   const { register, getValues, control } = useForm({
     defaultValues: {
       hourSegmentSize: 70,
-      hourSegmentColor: "black",
+      hourSegmentColor: "#313638",
       hourSegmentWidth: 5,
       hourSegmentGap: 10,
       minuteSegmentSize: 70,
-      minuteSegmentColor: "black",
+      minuteSegmentColor: "#313638",
       minuteSegmentWidth: 5,
       minuteSegmentGap: 10,
       secondSegmentSize: 70,
-      secondSegmentColor: "black",
+      secondSegmentColor: "#313638",
       secondSegmentWidth: 5,
       secondSegmentGap: 10,
       secondSegmentShow: true,
       separatorSize: 10,
-      separatorColor: "black",
+      separatorColor: "#313638",
       separatorGap: 10,
     },
   });
@@ -51,7 +51,7 @@ export default function DigitalClockSection() {
 
   return (
     <div className="my-6">
-      <h2 className="text-center">Digital Clock</h2>
+      <h2 className="text-center my-6">Digital Clock</h2>
       {/* Hour segment settings */}
       <div className="flex flex-col">
         <div className="mx-auto my-6">
@@ -82,7 +82,7 @@ export default function DigitalClockSection() {
             }}
           />
         </div>
-        <div className="flex flex-wrap flex-grow gap-6 justify-center">
+        <div className="flex flex-wrap flex-grow gap-6 justify-center my-6">
           <div>
             <h5>Hour segment: </h5>
             <SliderInput

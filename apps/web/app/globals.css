@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  color: #313638;
+}
+
 h1 {
   @apply text-6xl;
 }

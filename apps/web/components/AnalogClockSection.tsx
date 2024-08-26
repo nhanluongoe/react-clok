@@ -10,28 +10,28 @@ export default function AnalogClockSection() {
   const { register, getValues, control } = useForm({
     defaultValues: {
       frameSize: 300,
-      frameColor: "#000000",
+      frameColor: "#313638",
       frameWidth: 6,
       frameShadow: true,
       hourHandLength: 30,
       hourHandWidth: 12,
-      hourHandColor: "#000000",
+      hourHandColor: "#313638",
       minuteHandLength: 40,
       minuteHandWidth: 10,
-      minuteHandColor: "#000000",
+      minuteHandColor: "#313638",
       secondHandLength: 43,
       secondHandWidth: 4,
       secondHandColor: "darkred",
-      centerPartColor: "#000000",
+      centerPartColor: "#313638",
       centerPartSize: 5,
       primaryMarkWidth: 6,
-      primaryMarkColor: "#000000",
+      primaryMarkColor: "#313638",
       primaryMarkShow: true,
       secondaryMarkWidth: 3,
-      secondaryMarkColor: "#000000",
+      secondaryMarkColor: "#313638",
       secondaryMarkShow: true,
-      markNumberSize: "1.75rem",
-      markNumberColor: "#000000",
+      markNumberSize: "1.5rem",
+      markNumberColor: "#313638",
       markNumberShow: true,
     },
   });
@@ -69,7 +69,7 @@ export default function AnalogClockSection() {
 
   return (
     <div className="my-6">
-      <h2 className="text-center">Analog Clock</h2>
+      <h2 className="text-center my-6">Analog Clock</h2>
       {/* Frame settings */}
       <div className="flex flex-col">
         <div className="mx-auto my-6">
@@ -118,7 +118,7 @@ export default function AnalogClockSection() {
             }}
           />
         </div>
-        <div className="flex flex-wrap flex-grow gap-6 justify-center">
+        <div className="flex flex-wrap flex-grow gap-6 justify-center my-6">
           <div>
             <h5>Frame: </h5>
             <SliderInput
@@ -232,8 +232,8 @@ export default function AnalogClockSection() {
           {/* Mark number settings */}
           <div>
             <h5>Mark Number: </h5>
-            <div>
-              <label>Size: </label>
+            <div className="flex items-center">
+              <label className="mr-2 min-w-16 text-gray-700">Size: </label>
               <input
                 type="text"
                 {...register("markNumberSize")}

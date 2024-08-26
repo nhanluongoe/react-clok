@@ -11,7 +11,7 @@ export default function SliderInput(
 
   return (
     <div className="flex items-center">
-      {label && <label className="mr-2">{label}</label>}
+      {label && <label className="mr-2 min-w-16 text-gray-700">{label}</label>}
       <input {...rest} type="range" />
     </div>
   );
