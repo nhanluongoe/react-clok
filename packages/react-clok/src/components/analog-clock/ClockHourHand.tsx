@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import ClockHand, { ClockHandProps } from "./ClockHand";
 
 const DEFAULT_CONFIG = {
-  color: "black",
-  width: "12px",
+  color: "#313638",
+  width: "10px",
   length: "30%",
 };
 

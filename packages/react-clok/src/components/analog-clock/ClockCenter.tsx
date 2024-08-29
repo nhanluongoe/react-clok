@@ -7,7 +7,7 @@ export interface ClockCenterProps {
 }
 
 const DEFAULT_CONFIG = {
-  color: "black",
+  color: "#313638",
   size: "5%",
 };
 

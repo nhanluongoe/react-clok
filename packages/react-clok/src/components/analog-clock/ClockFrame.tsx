@@ -10,9 +10,9 @@ export interface ClockFrameProps {
 }
 
 const DEFAULT_CONFIG = {
-  color: "black",
+  color: "#313638",
   width: "6px",
-  size: "500px",
+  size: "300px",
   boxShadow: "0 0 15px rgba(0, 0, 0, 0.3)",
 };
 

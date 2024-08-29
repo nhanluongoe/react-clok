@@ -3,7 +3,7 @@ import ClockHand, { ClockHandProps } from "./ClockHand";
 
 const DEFAULT_CONFIG = {
   color: "darkred",
-  width: "4px",
+  width: "2px",
   length: "43%",
 };
 

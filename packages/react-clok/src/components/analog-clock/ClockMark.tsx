@@ -27,21 +27,21 @@ export interface ClockMarkProps {
 const DEFAULT_CONFIG = {
   number: {
     show: true,
-    color: "black",
-    fontSize: "2.5rem",
-    fontFamily: "Roboto",
+    color: "#313638",
+    fontSize: "1.5rem",
+    fontFamily: "inherit",
     fontWeight: "bold",
     locale: "en-US",
   },
   primaryMark: {
     show: true,
-    width: "12px",
-    color: "black",
+    width: "6px",
+    color: "#313638",
   },
   secondaryMark: {
     show: true,
-    width: "4px",
-    color: "black",
+    width: "3px",
+    color: "#313638",
   },
 };
 
