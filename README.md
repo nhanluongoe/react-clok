@@ -1,81 +1,48 @@
-# Turborepo starter
+# react-clock
 
-This is an official starter Turborepo.
+Simple and customizable analog and digital clock component for React applications.
 
-## Using this example
+## Installation
 
-Run the following command:
-
-```sh
-npx create-turbo@latest
+```bash
+npm install react-clock
+# or
+yarn add react-clock
 ```
 
-## What's inside?
+## Usage
 
-This Turborepo includes the following packages/apps:
+```tsx
+import { AnalogClock, DigitalClock } from "react-clock";
 
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
+const App = () => (
+  <>
+    <AnalogClock />
+    <DigitalClock />
+  </>
+);
 ```
 
-### Develop
+## Props
 
-To develop all apps and packages, run the following command:
+### Analog clock
 
-```
-cd my-turborepo
-pnpm dev
-```
+<!-- create a table in markdown format with 4 columns named name, type, default value and note respectively -->
 
-### Remote Caching
+| Name       | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Default value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Note                                                                                                                |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| frame      | <code>{ <br> &nbsp; size: &nbsp; CSSProperties['width'] <br> &nbsp; color: CSSProperties['color'] <br> &nbsp; width: CSSProperties['width'] <br> &nbsp; boxShadow: CSSProperties['boxShadow'] <br>}</code>                                                                                                                                                                                                                                                                                                                                    | <code>{ <br> &nbsp; size:&nbsp;'300px' <br> &nbsp; color: "#313638" <br> &nbsp; width: '6px' <br> &nbsp; boxShadow: '0 0 15px rgba(0, 0, 0, 0.3)' <br>}</code>                                                                                                                                                                                                                                                                                                                                            | Configuration for the clock frame                                                                                   |
+| hourHand   | <code>{ <br> &nbsp; length: CSSProperties['width'] <br> &nbsp; width: CSSProperties['width'] <br> &nbsp; color: CSSProperties['color'] <br>}</code>                                                                                                                                                                                                                                                                                                                                                                       | <code>{ <br> &nbsp; length: '30%' <br> &nbsp; width: '10px' <br> &nbsp; color: '#313638' <br>}</code>                                                                                                                                                                                                                                                                                                                                                                                                     | Configuration for the hour hand                                                                                     |
+| minuteHand | <code>{ <br> &nbsp; length: CSSProperties['width'] <br> &nbsp; width: CSSProperties['width'] <br> &nbsp; color: CSSProperties['color'] <br>}</code>                                                                                                                                                                                                                                                                                                                                                                       | <code>{ <br> &nbsp; length: '40%' <br> &nbsp; width: '8px' <br> &nbsp; color: '#313638' <br>}</code>                                                                                                                                                                                                                                                                                                                                                                                                      | Configuration for the minute hand                                                                                   |
+| secondHand | <code>{ <br> &nbsp; length: CSSProperties['width'] <br> &nbsp; width: CSSProperties['width'] <br> &nbsp; color: CSSProperties['color'] <br>}</code>                                                                                                                                                                                                                                                                                                                                                                       | <code>{ <br> &nbsp; length: '43%' <br> &nbsp; width: '2px' <br> &nbsp; color: 'darkred'<br>}</code>                                                                                                                                                                                                                                                                                                                                                                                                       | Configuration for the second hand                                                                                   |
+| center     | <code>{ <br> &nbsp; size: CSSProperties['width'] <br> &nbsp; color: CSSProperties['color'] <br>}</code>                                                                                                                                                                                                                                                                                                                                                                                                                   | <code>{ <br> &nbsp; size: '5%' <br> &nbsp; color: '#313638' <br>}</code>                                                                                                                                                                                                                                                                                                                                                                                                                             | Configuration for the center circle of the clock                                                                    |
+| mark       | <code>{ <br> &nbsp; primaryMark: { <br> &nbsp; &nbsp; width: CSSProperties['width'] <br> &nbsp; &nbsp; color: CSSProperties['color'] <br> &nbsp; &nbsp; show: boolean <br> &nbsp;} <br> &nbsp; secondaryMark: { <br> &nbsp; &nbsp; width: CSSProperties['width'] <br> &nbsp; &nbsp; color: CSSProperties['color'] <br> &nbsp; &nbsp; show: boolean <br> &nbsp;} <br> &nbsp; number: { <br> &nbsp; &nbsp; fontSize: CSSProperties['fontSize'] <br> &nbsp; &nbsp; fontFamily: CSSProperties['fontFamily'] <br> &nbsp; &nbsp; fontWeight: 'bold' <br> &nbsp; &nbsp; color: CSSProperties['color'] <br> &nbsp; &nbsp; show: true <br> &nbsp;} <br> }</code> | <code>{ <br> &nbsp; primaryMark: { <br> &nbsp; &nbsp; width: '6px' <br> &nbsp; &nbsp; color: '#313638' <br> &nbsp; &nbsp; show: boolean <br> &nbsp;} <br> &nbsp; secondaryMark: { <br> &nbsp; &nbsp; width: '3px' <br> &nbsp; &nbsp; color: '#313638' <br> &nbsp; &nbsp; show: true <br> &nbsp;} <br> &nbsp; number: { <br> &nbsp; &nbsp; fontSize: '1.5rem' <br> &nbsp; &nbsp; fontFamily: 'inherit'; <br> &nbsp; &nbsp; fontWeight: 'bold' <br> &nbsp; &nbsp; color: '#313638' <br> &nbsp; &nbsp; show: true <br> &nbsp;} <br> }</code> | Configuration for the marks of the clock including primary marks, <br> secondary marks and the number on the clock. |
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+## Contributing
+If you have any ideas on how to improve this package, feel free to open an issue or submit a pull request. All contributions are welcome!
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+## License
+Licensed under the MIT License.
 
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+## Author
+Made with 🍠 by [Nhan Luong](https://nhanluong.dev)
