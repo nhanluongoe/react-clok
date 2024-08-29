@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/create-next-app).
+# react-clock
 
-## Getting Started
+Simple and customizable analog and digital clock component for React applications.
 
-First, run the development server:
+## Installation
 
 ```bash
-npm run dev
+npm install react-clock
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn add react-clock
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```tsx
+import { AnalogClock, DigitalClock } from "react-clock";
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load Inter, a custom Google Font.
+const App = () => (
+  <>
+    <AnalogClock />
+    <DigitalClock />
+  </>
+);
+```
 
-## Learn More
+## Props
 
-To learn more about Next.js, take a look at the following resources:
+### Analog clock
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<!-- create a table in markdown format with 4 columns named name, type, default value and note respectively -->
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Name       | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Default value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Note                                                                                                                |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| frame      | <code>{ <br> &nbsp; size: &nbsp; CSSProperties['width'] <br> &nbsp; color: CSSProperties['color'] <br> &nbsp; width: CSSProperties['width'] <br> &nbsp; boxShadow: CSSProperties['boxShadow'] <br>}</code>                                                                                                                                                                                                                                                                                                                                    | <code>{ <br> &nbsp; size:&nbsp;'300px' <br> &nbsp; color: "#313638" <br> &nbsp; width: '6px' <br> &nbsp; boxShadow: '0 0 15px rgba(0, 0, 0, 0.3)' <br>}</code>                                                                                                                                                                                                                                                                                                                                            | Configuration for the clock frame                                                                                   |
+| hourHand   | <code>{ <br> &nbsp; length: CSSProperties['width'] <br> &nbsp; width: CSSProperties['width'] <br> &nbsp; color: CSSProperties['color'] <br>}</code>                                                                                                                                                                                                                                                                                                                                                                       | <code>{ <br> &nbsp; length: '30%' <br> &nbsp; width: '10px' <br> &nbsp; color: '#313638' <br>}</code>                                                                                                                                                                                                                                                                                                                                                                                                     | Configuration for the hour hand                                                                                     |
+| minuteHand | <code>{ <br> &nbsp; length: CSSProperties['width'] <br> &nbsp; width: CSSProperties['width'] <br> &nbsp; color: CSSProperties['color'] <br>}</code>                                                                                                                                                                                                                                                                                                                                                                       | <code>{ <br> &nbsp; length: '40%' <br> &nbsp; width: '8px' <br> &nbsp; color: '#313638' <br>}</code>                                                                                                                                                                                                                                                                                                                                                                                                      | Configuration for the minute hand                                                                                   |
+| secondHand | <code>{ <br> &nbsp; length: CSSProperties['width'] <br> &nbsp; width: CSSProperties['width'] <br> &nbsp; color: CSSProperties['color'] <br>}</code>                                                                                                                                                                                                                                                                                                                                                                       | <code>{ <br> &nbsp; length: '43%' <br> &nbsp; width: '2px' <br> &nbsp; color: 'darkred'<br>}</code>                                                                                                                                                                                                                                                                                                                                                                                                       | Configuration for the second hand                                                                                   |
+| center     | <code>{ <br> &nbsp; size: CSSProperties['width'] <br> &nbsp; color: CSSProperties['color'] <br>}</code>                                                                                                                                                                                                                                                                                                                                                                                                                   | <code>{ <br> &nbsp; size: '5%' <br> &nbsp; color: '#313638' <br>}</code>                                                                                                                                                                                                                                                                                                                                                                                                                             | Configuration for the center circle of the clock                                                                    |
+| mark       | <code>{ <br> &nbsp; primaryMark: { <br> &nbsp; &nbsp; width: CSSProperties['width'] <br> &nbsp; &nbsp; color: CSSProperties['color'] <br> &nbsp; &nbsp; show: boolean <br> &nbsp;} <br> &nbsp; secondaryMark: { <br> &nbsp; &nbsp; width: CSSProperties['width'] <br> &nbsp; &nbsp; color: CSSProperties['color'] <br> &nbsp; &nbsp; show: boolean <br> &nbsp;} <br> &nbsp; number: { <br> &nbsp; &nbsp; fontSize: CSSProperties['fontSize'] <br> &nbsp; &nbsp; fontFamily: CSSProperties['fontFamily'] <br> &nbsp; &nbsp; fontWeight: 'bold' <br> &nbsp; &nbsp; color: CSSProperties['color'] <br> &nbsp; &nbsp; show: true <br> &nbsp;} <br> }</code> | <code>{ <br> &nbsp; primaryMark: { <br> &nbsp; &nbsp; width: '6px' <br> &nbsp; &nbsp; color: '#313638' <br> &nbsp; &nbsp; show: boolean <br> &nbsp;} <br> &nbsp; secondaryMark: { <br> &nbsp; &nbsp; width: '3px' <br> &nbsp; &nbsp; color: '#313638' <br> &nbsp; &nbsp; show: true <br> &nbsp;} <br> &nbsp; number: { <br> &nbsp; &nbsp; fontSize: '1.5rem' <br> &nbsp; &nbsp; fontFamily: 'inherit'; <br> &nbsp; &nbsp; fontWeight: 'bold' <br> &nbsp; &nbsp; color: '#313638' <br> &nbsp; &nbsp; show: true <br> &nbsp;} <br> }</code> | Configuration for the marks of the clock including primary marks, <br> secondary marks and the number on the clock. |
 
-## Deploy on Vercel
+## Contributing
+If you have any ideas on how to improve this package, feel free to open an issue or submit a pull request. All contributions are welcome!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
+Licensed under the MIT License.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Author
+Made with 🍠 by [Nhan Luong](https://nhanluong.dev)
