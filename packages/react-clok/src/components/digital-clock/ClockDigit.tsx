@@ -32,7 +32,7 @@ export interface ClockDigitProps {
   width?: number;
   color?: CSSProperties["color"];
   size?: number;
-  gap?: number;
+  gap?: CSSProperties["gap"];
   className?: string;
 }
 
