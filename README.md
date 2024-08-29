@@ -24,6 +24,8 @@ const App = () => (
 ```
 
 ## Props
+> [!NOTE]
+> These props are all optional. If you don't provide any props, the clock will be rendered with the default configuration.
 
 ### Analog clock
 
@@ -212,7 +214,115 @@ const App = () => (
   </tbody>
 </table>
 
+### Digital clock
 
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default value</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>hourSegment</td>
+      <td>
+        <pre>
+{
+  size: CSSProperties['width']
+  color: CSSProperties['color']
+  width: CSSProperties['width']
+  gap: CSSProperties['width']
+}
+      </td>
+      <td>
+        <pre>
+{
+  size: '70px'
+  color: '#313638'
+  width: '5px'
+  gap: 10
+}
+      </pre>
+      </td>
+      <td>Configuration for the hour segment</td>
+    </tr>
+    <tr>
+      <td>minuteSegment</td>
+      <td>
+        <pre>
+{
+  size: CSSProperties['width']
+  color: CSSProperties['color']
+  width: CSSProperties['width']
+  gap: CSSProperties['width']
+}
+      </pre>
+      </td>
+      <td>
+        <pre>
+{
+  size: '70px'
+  color: '#313638'
+  width: '5px'
+  gap: 10
+}
+      </pre>
+      </td>
+      <td>Configuration for the minute segment</td>
+    </tr>
+    <tr>
+      <td>secondSegment</td>
+      <td>
+        <pre>
+{
+  show: boolean
+  size: CSSProperties['width']
+  color: CSSProperties['color']
+  width: CSSProperties['width']
+  gap: CSSProperties['width']
+}
+      </pre>
+      </td>
+      <td>
+        <pre>
+{
+  show: true
+  size: '70px'
+  color: '#313638'
+  width: '5px'
+  gap:  10 
+}
+      </pre>
+      </td>
+      <td>Configuration for the second segment</td>
+    </tr>
+    <tr>
+      <td>separator</td>
+      <td>
+        <pre>
+{
+  size: CSSProperties['width']
+  color: CSSProperties['color']
+  gap: CSSProperties['width']
+}
+      </pre>
+      </td>
+      <td>
+        <pre>
+{
+  size: '10px'
+  color: '#313638'
+  gap:  10 
+}
+      </pre>
+      </td>
+      <td>Configuration for the separator between segments</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Contributing
 
