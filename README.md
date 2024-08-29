@@ -140,7 +140,7 @@ const App = () => (
       <td>
         <pre>
 {
-  size: CSSProperties['width']
+  size: number;
   color: CSSProperties['color']
 }
        </pre
@@ -231,58 +231,81 @@ const App = () => (
       <td>
         <pre>
 {
-  size: CSSProperties['width']
+  size: number
   color: CSSProperties['color']
-  width: CSSProperties['width']
-  gap: CSSProperties['width']
+  width: number
+  gap: CSSProperties['gap']
 }
       </td>
       <td>
         <pre>
 {
-  size: '70px'
+  size: 70 
   color: '#313638'
-  width: '5px'
+  width: 5 
   gap: 10
 }
       </pre>
       </td>
-      <td>Configuration for the hour segment</td>
+      <td>Configuration for the hour segment. Due to the implementation, the size and width should be in pixel</td>
     </tr>
     <tr>
       <td>minuteSegment</td>
       <td>
         <pre>
 {
-  size: CSSProperties['width']
+  size: number
   color: CSSProperties['color']
-  width: CSSProperties['width']
-  gap: CSSProperties['width']
+  width: number
+  gap: CSSProperties['gap']
 }
       </pre>
       </td>
       <td>
         <pre>
 {
-  size: '70px'
+  size: 70 
   color: '#313638'
-  width: '5px'
+  width: 5 
   gap: 10
 }
       </pre>
       </td>
-      <td>Configuration for the minute segment</td>
+      <td>Configuration for the minute segment. Due to the implementation, the size and width should be in pixel</td>
     </tr>
     <tr>
       <td>secondSegment</td>
       <td>
         <pre>
 {
-  show: boolean
-  size: CSSProperties['width']
+  size: number
   color: CSSProperties['color']
-  width: CSSProperties['width']
-  gap: CSSProperties['width']
+  width: number
+  gap: CSSProperties['gap']
+}
+      </pre>
+      </td>
+      <td>
+        <pre>
+{
+  size: 70 
+  color: '#313638'
+  width: 5 
+  gap:  10 
+}
+      </pre>
+      </td>
+      <td>Configuration for the second segment. Due to the implementation, the size and width should be in pixel</td>
+    </tr>
+    <tr>
+      <td>separator</td>
+      <td>
+        <pre>
+{
+  show: boolean;
+  size: CSSProperties['width'];
+  color: CSSProperties['color']
+  gap: CSSProperties['gap']
 }
       </pre>
       </td>
@@ -290,29 +313,6 @@ const App = () => (
         <pre>
 {
   show: true
-  size: '70px'
-  color: '#313638'
-  width: '5px'
-  gap:  10 
-}
-      </pre>
-      </td>
-      <td>Configuration for the second segment</td>
-    </tr>
-    <tr>
-      <td>separator</td>
-      <td>
-        <pre>
-{
-  size: CSSProperties['width']
-  color: CSSProperties['color']
-  gap: CSSProperties['width']
-}
-      </pre>
-      </td>
-      <td>
-        <pre>
-{
   size: '10px'
   color: '#313638'
   gap:  10 
