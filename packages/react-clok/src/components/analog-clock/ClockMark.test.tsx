@@ -27,7 +27,7 @@ describe("clock mark", () => {
     const { container } = render(<ClockMark />);
     const number = container.querySelector("span");
 
-    expect(number).toHaveStyle("color: rgb(0, 0, 0)");
+    expect(number).toHaveStyle("color: rgb(49, 54, 56)");
   });
 
   it("should have red number by passing", () => {
@@ -61,7 +61,7 @@ describe("clock mark", () => {
     render(<ClockMark />);
     const marks = screen.queryAllByTestId("clock-primary-mark");
 
-    expect(marks[0]).toHaveStyle("background-color: rgb(0, 0, 0)");
+    expect(marks[0]).toHaveStyle("background-color: rgb(49, 54, 56)");
   });
 
   it("should show primary mark with red color by passing", () => {
@@ -77,11 +77,11 @@ describe("clock mark", () => {
     expect(marks[0]).toHaveStyle("background-color: rgb(255, 0, 0)");
   });
 
-  it("should have primary mark with 12px width by default", () => {
+  it("should have primary mark with 6px width by default", () => {
     render(<ClockMark />);
     const marks = screen.queryAllByTestId("clock-primary-mark");
 
-    expect(marks[0]).toHaveStyle("width: 12px");
+    expect(marks[0]).toHaveStyle("width: 6px");
   });
 
   it("should have primary mark with 8px width by passing", () => {

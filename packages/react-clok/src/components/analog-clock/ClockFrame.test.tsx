@@ -3,12 +3,12 @@ import { render } from "@testing-library/react";
 import ClockFrame from "./ClockFrame";
 
 describe("Clock frame", () => {
-  it("should have size of 500px by default", () => {
+  it("should have size of 300px by default", () => {
     const { container } = render(<ClockFrame />);
     const frame = container.querySelector("div");
 
-    expect(frame).toHaveStyle("width: 500px");
-    expect(frame).toHaveStyle("height: 500px");
+    expect(frame).toHaveStyle("width: 300px");
+    expect(frame).toHaveStyle("height: 300px");
   });
 
   it("should have size of 250px by passing size", () => {
@@ -53,6 +53,6 @@ describe("Clock frame", () => {
     const { container } = render(<ClockFrame />);
     const frame = container.firstChild;
 
-    expect(frame).toHaveStyle("border-color: black");
+    expect(frame).toHaveStyle("border-color: #313638");
   });
 });

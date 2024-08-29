@@ -9,7 +9,7 @@ describe("clock hour hand", () => {
 
     // Issue why needs to be rgb(0, 0, 0) instead of black
     // https://github.com/testing-library/jest-dom/issues/49
-    expect(hourHand).toHaveStyle("background-color: rgb(0, 0, 0)");
+    expect(hourHand).toHaveStyle("background-color: rgb(49, 54, 56)");
   });
 
   it("should have color red by passing", () => {
@@ -19,11 +19,11 @@ describe("clock hour hand", () => {
     expect(hourHand).toHaveStyle("background-color: rgb(255, 0, 0)");
   });
 
-  it("should have a width of 12px by default", () => {
+  it("should have a width of 10px by default", () => {
     const { container } = render(<ClockHourHand deg={1} />);
     const hourHand = container.querySelector("div");
 
-    expect(hourHand).toHaveStyle("height: 12px");
+    expect(hourHand).toHaveStyle("height: 10px");
   });
 
   it("should have a width of 20px by passing", () => {
