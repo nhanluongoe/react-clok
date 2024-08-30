@@ -1,4 +1,4 @@
-# react-clock
+# [react-clok](https://react-clok.vercel.app)
 
 Simple and customizable analog and digital clock component for React applications.
 
