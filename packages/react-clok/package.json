@@ -1,6 +1,6 @@
 {
   "name": "react-clok",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An minimal and customizable analog and digital clock for React app.",
   "source": "./src/index.ts",
   "types": "./dist/index.d.ts",
