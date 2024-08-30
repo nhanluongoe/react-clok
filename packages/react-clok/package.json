@@ -33,6 +33,10 @@
     "url": "git+https://github.com/nhanluongoe/react-clok.git",
     "directory": "packages/react-clok"
   },
+  "homepage": "https://react-clok.vercel.app",
+  "bugs": {
+    "url": "https://github.com/nhanluongoe/react-clok/issues"
+  },
   "files": [
     "dist",
     "src"
@@ -62,5 +66,12 @@
   "dependencies": {
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0"
-  }
+  },
+  "contributors": [
+    {
+      "name": "Nhan Luong",
+      "email": "nhanlt18@gmail.com",
+      "url": "https://nhanluong.dev"
+    }
+  ]
 }
