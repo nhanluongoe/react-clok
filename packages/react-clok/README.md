@@ -5,15 +5,15 @@ Simple and customizable analog and digital clock component for React application
 ## Installation
 
 ```bash
-npm install react-clock
+npm install react-clok
 # or
-yarn add react-clock
+yarn add react-clok
 ```
 
 ## Usage
 
 ```tsx
-import { AnalogClock, DigitalClock } from "react-clock";
+import { AnalogClock, DigitalClock } from "react-clok";
 
 const App = () => (
   <>
