@@ -2,9 +2,9 @@ import styled from "@emotion/styled";
 import { CSSProperties } from "react";
 
 const DEFAULT_CONFIG = {
-  size: 12,
-  gap: 20,
-  color: "black",
+  size: 10,
+  gap: 10,
+  color: "#313638",
 };
 
 export interface ClockSeparatorProps {

@@ -3,10 +3,10 @@ import { css } from "@emotion/react";
 import { CSSProperties } from "react";
 
 const DEFAULT_CONFIG = {
-  width: 16,
-  color: "black",
-  size: 100,
-  gap: 16,
+  width: 5,
+  color: "#313638",
+  size: 70,
+  gap: 10,
 };
 
 const DigitBase = styled.div<ClockDigitProps>`
