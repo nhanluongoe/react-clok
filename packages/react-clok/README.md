@@ -24,6 +24,7 @@ const App = () => (
 ```
 
 ## Props
+
 > [!NOTE]
 > These props are all optional. If you don't provide any props, the clock will be rendered with the default configuration.
 
@@ -234,7 +235,7 @@ const App = () => (
   size: number
   color: CSSProperties['color']
   width: number
-  gap: CSSProperties['gap']
+  gap: number
 }
       </td>
       <td>
@@ -257,7 +258,7 @@ const App = () => (
   size: number
   color: CSSProperties['color']
   width: number
-  gap: CSSProperties['gap']
+  gap: number
 }
       </pre>
       </td>
@@ -281,7 +282,7 @@ const App = () => (
   size: number
   color: CSSProperties['color']
   width: number
-  gap: CSSProperties['gap']
+  gap: number
 }
       </pre>
       </td>
@@ -303,9 +304,9 @@ const App = () => (
         <pre>
 {
   show: boolean;
-  size: CSSProperties['width'];
-  color: CSSProperties['color']
-  gap: CSSProperties['gap']
+  size: number;
+  color: number;
+  gap: number;
 }
       </pre>
       </td>
@@ -313,7 +314,7 @@ const App = () => (
         <pre>
 {
   show: true
-  size: '10px'
+  size: 10    
   color: '#313638'
   gap:  10 
 }
